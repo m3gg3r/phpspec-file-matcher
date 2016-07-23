@@ -12,15 +12,15 @@ class Extension implements PhpSpecExtension
 {
     public function load(ServiceContainer $container, array $params)
     {
-        $container->set('matchers.file', function () {
+        $container->define('matchers.file', function () {
             return new File();
         });
 
-        $container->set('matchers.file_content', function () {
+        $container->define('matchers.file_content', function () {
             return new FileContent();
         });
 
-        $container->set('matchers.directory', function () {
+        $container->define('matchers.directory', function () {
             return new Directory();
         });
     }
