@@ -3,12 +3,12 @@
 namespace EcomDev\PHPSpec\FileMatcher\Matcher;
 
 use PhpSpec\Exception\Example\FailureException;
-use PhpSpec\Matcher\MatcherInterface;
+use PhpSpec\Matcher\Matcher;
 
 /**
  * Directory existence matcher
  */
-class Directory extends AbstractMatcher implements MatcherInterface
+class Directory extends AbstractMatcher implements Matcher
 {
     /**
      * Constructor for matcher

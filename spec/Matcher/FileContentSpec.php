@@ -33,7 +33,7 @@ class FileContentSpec extends ObjectBehavior
     /**
      * @dataProvider positiveTestCases
      */
-    function it_responds_to_file_match_requests($matcher, $arguments)
+    function it_responds_to_file_match_requests($matcher, array $arguments)
     {
         $this->supports($matcher, null, $arguments)->shouldReturn(true);
     }
@@ -50,7 +50,7 @@ class FileContentSpec extends ObjectBehavior
     /**
      * @dataProvider positiveTestCases
      */
-    function it_has_positive_match_on_expected_content($matcher, $arguments)
+    function it_has_positive_match_on_expected_content($matcher, array $arguments)
     {
         $this->shouldNotThrow()->duringPositiveMatch($matcher, null, $this->wrapFilePath($arguments));
     }
@@ -58,7 +58,7 @@ class FileContentSpec extends ObjectBehavior
     /**
      * @dataProvider negativeTestCases
      */
-    function it_does_not_have_positive_match_on_not_expected_content($matcher, $arguments, $message)
+    function it_does_not_have_positive_match_on_not_expected_content($matcher, array $arguments, $message)
     {
         $arguments = $this->wrapFilePath($arguments);
         $this->shouldThrow(
@@ -69,7 +69,7 @@ class FileContentSpec extends ObjectBehavior
     /**
      * @dataProvider negativeTestCases
      */
-    function it_has_negative_match_on_not_expected_content($matcher, $arguments)
+    function it_has_negative_match_on_not_expected_content($matcher, array $arguments)
     {
         $this->shouldNotThrow()->duringNegativeMatch($matcher, null, $this->wrapFilePath($arguments));
     }
@@ -78,7 +78,7 @@ class FileContentSpec extends ObjectBehavior
     /**
      * @dataProvider positiveTestCases
      */
-    function it_does_not_have_negative_match_on_expected_content($matcher, $arguments, $message)
+    function it_does_not_have_negative_match_on_expected_content($matcher, array $arguments, $message)
     {
         $arguments = $this->wrapFilePath($arguments);
         $this->shouldThrow(
@@ -117,7 +117,7 @@ class FileContentSpec extends ObjectBehavior
         ];
     }
 
-    private function wrapFilePath($paths)
+    private function wrapFilePath(array $paths)
     {
         if (isset($paths[0])) {
             $paths[0] = $this->vfs->url() . '/' . $paths[0];

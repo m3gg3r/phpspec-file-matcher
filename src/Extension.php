@@ -5,12 +5,12 @@ namespace EcomDev\PHPSpec\FileMatcher;
 use EcomDev\PHPSpec\FileMatcher\Matcher\Directory;
 use EcomDev\PHPSpec\FileMatcher\Matcher\File;
 use EcomDev\PHPSpec\FileMatcher\Matcher\FileContent;
-use PhpSpec\Extension\ExtensionInterface;
+use PhpSpec\Extension as PhpSpecExtension;
 use PhpSpec\ServiceContainer;
 
-class Extension implements ExtensionInterface
+class Extension implements PhpSpecExtension
 {
-    public function load(ServiceContainer $container)
+    public function load(ServiceContainer $container, array $params)
     {
         $container->set('matchers.file', function () {
             return new File();

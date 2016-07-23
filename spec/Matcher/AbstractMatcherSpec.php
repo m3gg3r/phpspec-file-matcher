@@ -16,7 +16,7 @@ class AbstractMatcherSpec extends ObjectBehavior
 
     function it_implements_matcher_interface()
     {
-        $this->shouldImplement('PhpSpec\Matcher\MatcherInterface');
+        $this->shouldImplement('PhpSpec\Matcher\Matcher');
     }
 
     function it_supports_only_specified_prefixes_with_any_arguments_but_not_empty_list()

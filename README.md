@@ -15,7 +15,7 @@ Allows to match directory/file existance and basic file content match.
 
     ```yaml
     extensions:
-      - EcomDev\PHPSpec\FileMatcher\Extension
+      EcomDev\PHPSpec\FileMatcher\Extension: ~
     ```
     
 ## Matchers

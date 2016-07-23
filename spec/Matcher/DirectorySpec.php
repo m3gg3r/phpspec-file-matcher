@@ -35,7 +35,7 @@ class DirectorySpec extends ObjectBehavior
     /**
      * @dataProvider positiveDirectoryTestCases
      */
-    function it_responds_to_directory_match_requests($matcher, $arguments)
+    function it_responds_to_directory_match_requests($matcher, array $arguments)
     {
         $this->supports($matcher, null, $arguments)->shouldReturn(true);
     }

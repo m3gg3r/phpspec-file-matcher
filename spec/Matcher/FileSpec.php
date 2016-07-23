@@ -35,7 +35,7 @@ class FileSpec extends ObjectBehavior
     /**
      * @dataProvider positiveFileTestCases
      */
-    function it_responds_to_file_match_requests($matcher, $arguments)
+    function it_responds_to_file_match_requests($matcher, array $arguments)
     {
         $this->supports($matcher, null, $arguments)->shouldReturn(true);
     }
@@ -52,7 +52,7 @@ class FileSpec extends ObjectBehavior
     /**
      * @dataProvider positiveFileTestCases
      */
-    function it_has_positive_match_on_existing_files($matcher, $arguments)
+    function it_has_positive_match_on_existing_files($matcher, array $arguments)
     {
         $this->shouldNotThrow()->duringPositiveMatch($matcher, null, $this->wrapFilePath($arguments));
     }
@@ -60,7 +60,7 @@ class FileSpec extends ObjectBehavior
     /**
      * @dataProvider negativeFileTestCases
      */
-    function it_does_not_have_positive_match_on_non_existing_files($matcher, $arguments, $message)
+    function it_does_not_have_positive_match_on_non_existing_files($matcher, array $arguments, $message)
     {
         $arguments = $this->wrapFilePath($arguments);
         $this->shouldThrow(
@@ -71,7 +71,7 @@ class FileSpec extends ObjectBehavior
     /**
      * @dataProvider negativeFileTestCases
      */
-    function it_has_negative_match_on_not_existing_files($matcher, $arguments)
+    function it_has_negative_match_on_not_existing_files($matcher, array $arguments)
     {
         $this->shouldNotThrow()->duringNegativeMatch($matcher, null, $this->wrapFilePath($arguments));
     }
@@ -80,7 +80,7 @@ class FileSpec extends ObjectBehavior
     /**
      * @dataProvider positiveFileTestCases
      */
-    function it_does_not_have_negative_match_on_existing_files($matcher, $arguments, $message)
+    function it_does_not_have_negative_match_on_existing_files($matcher, array $arguments, $message)
     {
         $arguments = $this->wrapFilePath($arguments);
         $this->shouldThrow(

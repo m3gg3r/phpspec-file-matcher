@@ -2,12 +2,12 @@
 
 namespace EcomDev\PHPSpec\FileMatcher\Matcher;
 
-use PhpSpec\Matcher\MatcherInterface;
+use PhpSpec\Matcher\Matcher;
 
 /**
  * Abstract matcher
  */
-abstract class AbstractMatcher implements MatcherInterface
+abstract class AbstractMatcher implements Matcher
 {
     /**
      * Resolved matcher list for supports() call
