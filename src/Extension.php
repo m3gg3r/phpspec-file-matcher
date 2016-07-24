@@ -14,14 +14,14 @@ class Extension implements PhpSpecExtension
     {
         $container->define('matchers.file', function () {
             return new File();
-        });
+        }, ['matchers']);
 
         $container->define('matchers.file_content', function () {
             return new FileContent();
-        });
+        }, ['matchers']);
 
         $container->define('matchers.directory', function () {
             return new Directory();
-        });
+        }, ['matchers']);
     }
 }

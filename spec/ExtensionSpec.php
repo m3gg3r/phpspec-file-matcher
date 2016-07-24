@@ -20,15 +20,15 @@ class ExtensionSpec extends ObjectBehavior
     {
         $container->define('matchers.file', Argument::that(function ($value) {
             return ($value()) instanceof File;
-        }))->shouldBeCalled();
+        }), ['matchers'])->shouldBeCalled();
 
         $container->define('matchers.file_content', Argument::that(function ($value) {
             return ($value()) instanceof FileContent;
-        }))->shouldBeCalled();
+        }), ['matchers'])->shouldBeCalled();
 
         $container->define('matchers.directory', Argument::that(function ($value) {
             return ($value()) instanceof Directory;
-        }))->shouldBeCalled();
+        }), ['matchers'])->shouldBeCalled();
 
         $this->load($container, []);
     }
