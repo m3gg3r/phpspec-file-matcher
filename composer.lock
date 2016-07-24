@@ -14,21 +14,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/m3gg3r/phpspec-data-provider-extension.git",
-                "reference": "01ad68ab9c05df071b81982c9a0c26e84017d24b"
+                "reference": "327e79c3f9eea268f5006e30191350b4864b7b40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/m3gg3r/phpspec-data-provider-extension/zipball/01ad68ab9c05df071b81982c9a0c26e84017d24b",
-                "reference": "01ad68ab9c05df071b81982c9a0c26e84017d24b",
+                "url": "https://api.github.com/repos/m3gg3r/phpspec-data-provider-extension/zipball/327e79c3f9eea268f5006e30191350b4864b7b40",
+                "reference": "327e79c3f9eea268f5006e30191350b4864b7b40",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
+                "php": ">=5.6.0",
                 "phpspec/phpspec": "~3.0"
             },
             "require-dev": {
                 "behat/behat": "^3.1",
-                "bossa/phpspec2-expect": "^1.0",
+                "bossa/phpspec2-expect": "dev-feature/phpspec-3",
                 "symfony/console": "^3.1",
                 "symfony/filesystem": "^3.1",
                 "symfony/process": "^3.1"
@@ -68,7 +68,7 @@
             "support": {
                 "source": "https://github.com/m3gg3r/phpspec-data-provider-extension/tree/master"
             },
-            "time": "2016-07-23 10:22:02"
+            "time": "2016-07-24 07:44:39"
         },
         {
             "name": "doctrine/instantiator",
