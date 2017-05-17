@@ -29,10 +29,12 @@ class FileContent extends AbstractMatcher
     public function positiveMatch($name, $subject, array $arguments)
     {
         list($file, $content) = $arguments;
-        if ($content !== @file_get_contents($file)) {
+        $fileContent = @file_get_contents($file);
+        if ($content !== $fileContent) {
             throw new FailureException(sprintf(
-                'File "%s" content does not match expected content "%s"',
+                'File "%s" content'.PHP_EOL.'"%s"'.PHP_EOL.'does not match expected content'.PHP_EOL.'"%s"',
                 $file,
+                $fileContent,
                 $content
             ));
         }
@@ -50,10 +52,12 @@ class FileContent extends AbstractMatcher
     public function negativeMatch($name, $subject, array $arguments)
     {
         list($file, $content) = $arguments;
-        if ($content === @file_get_contents($file)) {
+        $fileContent = @file_get_contents($file);
+        if ($content === $fileContent) {
             throw new FailureException(sprintf(
-                'File "%s" content matches unexpected content "%s"',
+                'File "%s" content'.PHP_EOL.'"%s"'.PHP_EOL.'matches unexpected content'.PHP_EOL.'"%s"',
                 $file,
+                $fileContent,
                 $content
             ));
         }
